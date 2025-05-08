@@ -68,6 +68,7 @@ for _ in range(n):
 
 Author: zhangm365
 Version: 1.3
+虚拟环境中运行：安装 rich 三方库
 """
 import random
 
