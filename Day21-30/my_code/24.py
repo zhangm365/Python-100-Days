@@ -64,9 +64,23 @@ scores = [[random.randrange(70, 101) for _ in range(3)] for _ in range(5)]
 wb = xlwt.Workbook()
 
 sheet = wb.add_sheet('一年级二年级')
+
+## 表头单元格背景为黄色
+header_style = xlwt.XFStyle()
+pattern = xlwt.Pattern()
+pattern.pattern = xlwt.Pattern.SOLID_PATTERN
+pattern.pattern_fore_colour = 5
+header_style.pattern = pattern
+
+## 表头垂直居中对齐
+align = xlwt.Alignment()
+align.vert = xlwt.Alignment.VERT_CENTER
+align.horz = xlwt.Alignment.HORZ_CENTER
+header_style.alignment = align
+
 titles = ('姓名', '语文', '数学', '英语')
 for index, title in enumerate(titles):
-    sheet.write(0, index, title)
+    sheet.write(0, index, title, header_style)
 
 for row in range(len(scores)):
     sheet.write(row + 1, 0, student_names[row])
