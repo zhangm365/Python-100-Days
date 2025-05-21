@@ -193,5 +193,3 @@ data2_sort = merge_sort(data2)
 print(f'归并排序的结果：{data1_sort}')
 print(f'归并排序的结果：{data2_sort}')
 
-
-
