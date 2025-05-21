@@ -78,7 +78,10 @@ print(counter.most_common(3))
 # 6. 排序算法
 
 def select_sort(items, comp = lambda x, y: x < y):
-    """简单选择排序"""
+    """
+    简单选择排序
+    该算法是一个不稳定算法。
+    """
     # 拷贝
     items = items[:]
     for i in range(len(items) - 1):
@@ -189,4 +192,6 @@ data2_sort = merge_sort(data2)
 
 print(f'归并排序的结果：{data1_sort}')
 print(f'归并排序的结果：{data2_sort}')
+
+
 
