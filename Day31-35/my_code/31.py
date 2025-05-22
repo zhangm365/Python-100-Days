@@ -193,3 +193,26 @@ data2_sort = merge_sort(data2)
 print(f'归并排序的结果：{data1_sort}')
 print(f'归并排序的结果：{data2_sort}')
 
+
+# 公鸡5元一只 母鸡3元一只 小鸡1元三只
+# 用100元买100只鸡 问公鸡/母鸡/小鸡各多少只
+for x in range(20):
+    for y in range(33):
+        z = 100 - x - y
+        if 5 * x + 3 * y + z // 3 == 100 and z % 3 == 0:
+            print(f'公鸡数量 = {x}, 母鸡数量 = {y}, 小鸡数量 = {z}')
+
+fish = 6
+while True:
+    total = fish
+    enough = True
+    for _ in range(5):
+        if (total - 1) % 5 == 0:
+            total = (total - 1) // 5 * 4
+        else:
+            enough = False
+            break
+    if enough:
+        print(fish)
+        break
+    fish += 5
