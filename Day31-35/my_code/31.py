@@ -202,6 +202,7 @@ for x in range(20):
         if 5 * x + 3 * y + z // 3 == 100 and z % 3 == 0:
             print(f'公鸡数量 = {x}, 母鸡数量 = {y}, 小鸡数量 = {z}')
 
+# 五人合伙捕鱼
 fish = 6
 while True:
     total = fish
@@ -216,3 +217,48 @@ while True:
         print(fish)
         break
     fish += 5
+
+
+#
+class Thing(object):
+    """物品"""
+
+    def __init__(self, name, price, weight):
+        self.name = name
+        self.price = price
+        self.weight = weight
+
+    @property
+    def value(self):
+        """价格重量比"""
+        return self.price / self.weight
+
+def input_thing():
+    """请输入物品信息"""
+    # 添加输入提示，说明输入格式为：名称 价格 重量
+    print("请输入物品名称、价格、重量（用空格分隔）：")
+    name_str, price_str, weight_str = input().split()
+    return name_str, int(price_str), int(weight_str)
+
+def main():
+    """主函数"""
+    # 添加输入提示，说明输入格式为：最大承重 物品数量
+    print("请输入背包最大承重和物品数量（用空格分隔）：")
+    max_weight, num_of_things = map(int, input().split())
+    all_things = []
+    for _ in range(num_of_things):
+        all_things.append(Thing(*input_thing()))    # 解包传参
+
+    all_things.sort(key=lambda t: t.value, reverse=True)
+    total_weight = 0
+    total_price = 0
+    for thing in all_things:
+        if total_weight + thing.weight <= max_weight:
+            print(f'小偷偷走了{thing.name}')
+            total_weight += thing.weight
+            total_price += thing.price
+
+    print(f'总价值：{total_price} 美元')
+
+if __name__ == '__main__':
+    main()
