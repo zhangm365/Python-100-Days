@@ -254,7 +254,7 @@ def main():
     total_price = 0
     for thing in all_things:
         if total_weight + thing.weight <= max_weight:
-            print(f'小偷偷走了{thing.name}')
+            print(f'小偷拿走了{thing.name}')
             total_weight += thing.weight
             total_price += thing.price
 
@@ -262,3 +262,38 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+"""
+快速排序-选择枢轴对元素进行划分：左边的元素都比枢轴小， 右边的元素都比枢轴大。
+"""
+
+def quick_sort(items, comp = lambda x, y: x <= y):
+    items = list(items)[:]
+    _quick_sort(items, 0, len(items) - 1, comp)
+    return items
+
+# 递归对枢轴两边的区间元素进行排序
+def _quick_sort(items, start, end, comp):
+    if start < end:
+        pos = _partition(items, start, end, comp)
+        _quick_sort(items, start, pos - 1, comp)
+        _quick_sort(items, pos + 1, end, comp)
+
+
+# 分区函数：返回枢轴
+def _partition(items, start, end, comp):
+    pivot = items[end]
+    i = start - 1
+    for j in range(start, end):
+        if comp(items[j], pivot):
+            i += 1
+            items[i], items[j] = items[j], items[i]
+
+    items[i + 1], items[end] = items[end], items[i + 1]
+    print(f'每趟的排序结果: {items}')
+    return i + 1
+
+
+data = [4, 5, 1, 6, 2, 3]
+print(f'快速排序的结果：{quick_sort(data)}')
