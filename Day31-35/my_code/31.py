@@ -281,7 +281,7 @@ def _quick_sort(items, start, end, comp):
         _quick_sort(items, pos + 1, end, comp)
 
 
-# 分区函数：返回枢轴
+# 分区函数：返回枢轴索引
 def _partition(items, start, end, comp):
     pivot = items[end]
     i = start - 1
@@ -289,11 +289,26 @@ def _partition(items, start, end, comp):
         if comp(items[j], pivot):
             i += 1
             items[i], items[j] = items[j], items[i]
-
+    # 将枢轴元素移动到最终位置
     items[i + 1], items[end] = items[end], items[i + 1]
     print(f'每趟的排序结果: {items}')
-    return i + 1
-
+    return i + 1    # 枢轴索引
 
 data = [4, 5, 1, 6, 2, 3]
 print(f'快速排序的结果：{quick_sort(data)}')
+
+"""
+动态规划：子列表元素之和的最大值。
+"""
+
+def main():
+    items = list(map(int, input().split()))
+    overall = partial = items[0]
+    for i in range(1, len(items)):
+        partial = max(items[i], partial + items[i])
+        overall = max(overall, partial)
+
+    print(overall)
+
+if __name__ == '__main__':
+    main()
