@@ -199,7 +199,7 @@ def main():
             executor.submit(account.deposit, money)
         
         for _ in range(50):
-            money = random.randint(1, 20)
+            money = random.randint(3, 60)
             executor.submit(account.withdraw, money)
 
     print(f"账户余额: {account.balance}")
