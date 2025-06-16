@@ -1,10 +1,11 @@
 
 """
-使用 requests 库访问网页内容
+1. 使用 requests 库访问网页内容
+2. 使用 BeautifulSoup 解析 HTML 内容
 """
 
 import requests
-# 使用 BeautifulSoup 解析 HTML 内容
+# BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 from bs4 import BeautifulSoup
 
 url = 'https://www.github.com/'
