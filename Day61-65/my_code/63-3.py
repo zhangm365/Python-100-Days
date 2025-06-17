@@ -4,7 +4,7 @@
 """
 
 
-## yield 关键字：该函数会得到一个生成器对象
+# 1.  yield 关键字：该函数会得到一个生成器对象
 
 def fib(n):
     """计算斐波那契数列的第 n 项"""
@@ -39,3 +39,22 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# 2. 异步函数：async, await
+
+import asyncio
+import time
+
+async def display(num):
+    await asyncio.sleep(1)
+    print(num)
+
+async def main():
+    start = time.time()
+    await asyncio.gather(*(display(i) for i in range(1, 10)))
+    end = time.time()
+    print(f'耗时: {end - start:.3f} 秒.')
+
+if __name__ == '__main__':
+    asyncio.run(main())
