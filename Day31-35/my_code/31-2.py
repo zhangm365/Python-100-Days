@@ -110,13 +110,13 @@ from concurrent.futures import ThreadPoolExecutor
 from random import randint
 from time import sleep
 
-import threading
+from threading import RLock, Condition
 
 class Account:
     def __init__(self, balance):
         self.balance = balance
-        self.lock = threading.RLock()
-        self.condition = threading.Condition(self.lock)
+        self.lock = RLock()
+        self.condition = Condition(self.lock)
 
     def withdraw(self, money):
         """取钱"""
@@ -162,12 +162,16 @@ def sub_money_worker(account):
 
 def main():
     account = Account(10)
+    futures = []
     with ThreadPoolExecutor(max_workers=15) as executor:
         for _ in range(10):    # 10 个线程存钱
-            executor.submit(add_money_worker, account)
+            futures.append(executor.submit(add_money_worker, account))
 
         for _ in range(5):    # 5 个线程取钱
-            executor.submit(sub_money_worker,account)
+            futures.append(executor.submit(sub_money_worker,account))
+
+        for future in futures:
+            future.result()  # 等待所有任务完成
 
 if __name__ == '__main__':
     main()

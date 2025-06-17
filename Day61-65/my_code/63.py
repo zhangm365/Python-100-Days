@@ -168,15 +168,15 @@ class Account(object):
         self.lock = RLock()
         self.condition = Condition(self.lock)  # 条件变量，用于线程间的通知
 
-
     def deposit(self, amount):
         """存款"""
         with self.condition:    # 使用锁来保护共享资源
-            new_balance = self.balance + amount
-            time.sleep(0.01)  # 模拟存款操作的延迟
-            self.balance = new_balance
+            self.balance += amount
             self.condition.notify_all()  # 通知其他等待的线程余额已更新
-    
+        
+        print(f"存款 {amount} 元，当前余额: {self.balance} 元")
+        time.sleep(0.01)  # 模拟存款操作的延迟
+
     def withdraw(self, amount):
         """取款"""
         with self.condition:    # 使用锁来保护共享资源
@@ -185,23 +185,28 @@ class Account(object):
                 got_fund = self.condition.wait_for(lambda: self.balance >= amount, timeout=10)
                 if not got_fund:
                     raise TimeoutError("取款超时：余额不足")
-                        
-            new_balance = self.balance - amount
-            time.sleep(0.01)
-            self.balance = new_balance
+
+            self.balance -= amount
+        
+        print(f"取款 {amount} 元，当前余额: {self.balance} 元")
+        time.sleep(0.01)
 
 def main():
     account = Account()
-
+    futures = []
     with ThreadPoolExecutor(max_workers=16) as executor:
         for _ in range(50):
             money = random.randint(5, 50)
-            executor.submit(account.deposit, money)
-        
+            futures.append(executor.submit(account.deposit, money))
+
         for _ in range(50):
             money = random.randint(3, 60)
-            executor.submit(account.withdraw, money)
+            futures.append(executor.submit(account.withdraw, money))
+        
 
+        # 等待所有任务完成
+        for future in futures:
+            future.result()
     print(f"账户余额: {account.balance}")
 
 if __name__ == '__main__':
