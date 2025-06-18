@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 url = 'https://www.github.com/'
 # 设置请求头，模拟浏览器访问
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36',
 }
 
 resp = requests.get(url, headers=headers)
