@@ -2,9 +2,9 @@
 
 > **作者**：骆昊
 >
-> **说明**：如果访问 GitHub 比较慢的话，可以关注我的知乎号（[**Python-Jack**](https://www.zhihu.com/people/jackfrued)），上面的[“**从零开始学Python**”](<https://zhuanlan.zhihu.com/c_1216656665569013760>)专栏（对应本项目前 20 天的内容）比较适合初学者，其他的专栏如“[**数据思维和统计思维**](https://www.zhihu.com/column/c_1620074540456964096)”、“[**基于Python的数据分析**](https://www.zhihu.com/column/c_1217746527315496960)”、“[**说走就走的AI之旅**](https://www.zhihu.com/column/c_1628900668109946880)”等也在持续创作和更新中，欢迎大家关注、点赞和评论。如果希望免费学习打卡或者参与问题讨论，可以加入下面的 QQ 交流群（三个群加一个即可），请不要重复加群，也不要在群里发布广告和其他色情、低俗或敏感内容。如果有付费学习或付费咨询的需求，可以添加我的私人微信（微信号：**jackfrued**），备注好自己的称呼和需求，我会为大家提供力所能及的帮助。
+> **说明**：如果访问 GitHub 比较慢的话，可以关注我的知乎账号（[**Python-Jack**](https://www.zhihu.com/people/jackfrued)），上面的[“**从零开始学Python**”](<https://zhuanlan.zhihu.com/c_1216656665569013760>)专栏（对应本项目前 20 天的内容）比较适合初学者，其他的专栏如“[**数据思维和统计思维**](https://www.zhihu.com/column/c_1620074540456964096)”、“[**基于Python的数据分析**](https://www.zhihu.com/column/c_1217746527315496960)”、“[**说走就走的AI之旅**](https://www.zhihu.com/column/c_1628900668109946880)”等也在持续更新中，欢迎大家关注、点赞和评论。目前免费的 QQ 交流群已经人满为患，消息太杂乱也没有办法一一回复，如果有一起打卡学习或付费咨询的需求，可以加入付费交流群，新用户可以通过下方二维码付费之后添加我的私人微信（微信号：**jackfrued**），然后邀请大家进入付费学习打卡群，添加微信时请备注好自己的称呼和需求，我会为大家提供力所能及的帮助。
 >
-> <img src="res/python_study_qq_group.png" style="zoom:30%;">
+> <img src="res/pay_qr_code.png" style="zoom:38%;">
 >
 > 本项目对应的部分视频已经同步到 [Bilibili](https://space.bilibili.com/1177252794)，有兴趣的小伙伴可以点赞、投币、关注，一键三连支持一下！
 
@@ -43,9 +43,9 @@ Python在以下领域都有用武之地。
 
 - **Make English as your working language.** （让英语成为你的工作语言）
 - **Practice makes perfect.** （熟能生巧）
-- **All experience comes from the mistakes you've made.** （所有的经验都源于你犯过的错误）
-- **Don't be a freeloader.** （不要当伸手党）
-- **Either outstanding or out.** （要么出众，要么出局）
+- **All experience comes from the mistakes you've made.** （所有的经验都源于犯过的错误）
+- **Don't be a freeloader.** （学会分享，不要只当伸手党）
+- （拥抱AI，提升效率）
 
 ### Day01~20 - Python语言基础
 
@@ -418,15 +418,20 @@ Python在以下领域都有用武之地。
 7. 释放连接
 8. 编写ETL脚本
 
-#### Day45 - [大数据平台和HiveSQL](./Day36-45/45.大数据平台和HiveSQL.md)
+#### Day45 - [Hive实战](./Day36-45/45.Hive实战.md)
 
-1. Hadoop生态圈
-2. Hive概述
-3. 准备工作
-4. 数据类型
-5. DDL操作
-6. DML操作
-7. 数据查询
+1. Hive概述
+2. 环境搭建
+3. 常用命令
+4. 基本语法
+5. 建表操作
+6. 写入数据
+7. 常用函数
+8. 分组聚合
+9. 抽样操作
+10. 排序操作
+11. 横向展开
+12. 性能优化
 
 ### Day46~60 - 实战Django
 
