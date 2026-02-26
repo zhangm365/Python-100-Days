@@ -131,4 +131,5 @@ gs = GridSearchCV(
     },
     cv=5,
 )
+# 运行时间较久
 gs.fit(X_train, y_train)
