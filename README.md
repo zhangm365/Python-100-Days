@@ -4,7 +4,7 @@
 >
 > **说明**：如果访问 GitHub 比较慢的话，可以关注我的知乎账号（[**Python-Jack**](https://www.zhihu.com/people/jackfrued)），上面的[“**从零开始学Python**”](<https://zhuanlan.zhihu.com/c_1216656665569013760>)专栏（对应本项目前 20 天的内容）比较适合初学者，其他的专栏如“[**数据思维和统计思维**](https://www.zhihu.com/column/c_1620074540456964096)”、“[**基于Python的数据分析**](https://www.zhihu.com/column/c_1217746527315496960)”、“[**说走就走的AI之旅**](https://www.zhihu.com/column/c_1628900668109946880)”等也在持续更新中，欢迎大家关注、点赞和评论。目前免费的 QQ 交流群已经人满为患，消息太杂乱也没有办法一一回复，如果有一起打卡学习或付费咨询的需求，可以加入付费交流群，新用户可以通过下方二维码付费之后添加我的私人微信（微信号：**jackfrued**），然后邀请大家进入付费学习打卡群，添加微信时请备注好自己的称呼和需求，我会为大家提供力所能及的帮助。
 >
-> <img src="res/pay_qr_code.png" style="zoom:38%;">
+> <img src="res/pay_qr_code.png" style="zoom:32%;">
 >
 > 本项目对应的部分视频已经同步到 [Bilibili](https://space.bilibili.com/1177252794)，有兴趣的小伙伴可以点赞、投币、关注，一键三连支持一下！
 
@@ -45,7 +45,7 @@ Python在以下领域都有用武之地。
 - **Practice makes perfect.** （熟能生巧）
 - **All experience comes from the mistakes you've made.** （所有的经验都源于犯过的错误）
 - **Don't be a freeloader.** （学会分享，不要只当伸手党）
-- （拥抱AI，提升效率）
+- **Embrace AI to boost your productivity.**（拥抱AI，提升效率）
 
 ### Day01~20 - Python语言基础
 
